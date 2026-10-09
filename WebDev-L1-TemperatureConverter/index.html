@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="TempConvert - A colorful, fast and accurate temperature converter."
+    >
+
+    <title>TempConvert | Temperature Converter</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="bg-shape shape-one"></div>
+    <div class="bg-shape shape-two"></div>
+    <div class="bg-shape shape-three"></div>
+
+    <header class="header">
+        <div class="container nav-container">
+
+            <a href="#" class="brand">
+                <span class="brand-icon">°</span>
+
+                <div>
+                    <span class="brand-name">TempConvert</span>
+                    <span class="brand-tagline">Simple • Fast • Accurate</span>
+                </div>
+            </a>
+
+            <div class="header-badge">
+                <span class="status-dot"></span>
+                Live Converter
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <div class="container hero-grid">
+
+                <div class="hero-content">
+
+                    <span class="eyebrow">
+                        🌈 SMART TEMPERATURE TOOL
+                    </span>
+
+                    <h1>
+                        Temperature
+                        <span>Converter</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Convert temperatures between Celsius, Fahrenheit,
+                        and Kelvin with a clean, fast and colorful experience.
+                    </p>
+
+                    <div class="hero-features">
+                        <div class="hero-feature">
+                            <span>⚡</span>
+                            <p>Instant Results</p>
+                        </div>
+
+                        <div class="hero-feature">
+                            <span>🎯</span>
+                            <p>Accurate</p>
+                        </div>
+
+                        <div class="hero-feature">
+                            <span>📱</span>
+                            <p>Responsive</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="temperature-visual">
+
+                    <div class="visual-glow"></div>
+
+                    <div class="temperature-circle">
+
+                        <div class="circle-ring ring-one"></div>
+                        <div class="circle-ring ring-two"></div>
+
+                        <div class="temperature-symbol">°</div>
+
+                        <div class="visual-temperature">
+                            25<span>°C</span>
+                        </div>
+
+                        <p>Perfect Room Temperature</p>
+                    </div>
+
+                    <div class="floating-card card-top">
+                        <span class="floating-icon orange">🔥</span>
+                        <div>
+                            <strong>212°F</strong>
+                            <small>Boiling Point</small>
+                        </div>
+                    </div>
+
+                    <div class="floating-card card-bottom">
+                        <span class="floating-icon cyan">❄</span>
+                        <div>
+                            <strong>273.15K</strong>
+                            <small>Freezing Point</small>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section class="converter-section">
+
+            <div class="container">
+
+                <div class="converter-card">
+
+                    <div class="converter-header">
+
+                        <div>
+                            <span class="section-label">CONVERT NOW</span>
+
+                            <h2>
+                                Change your temperature
+                            </h2>
+
+                            <p>
+                                Enter a value, choose your units and get
+                                your result instantly.
+                            </p>
+                        </div>
+
+                        <div class="conversion-count">
+                            <strong>6</strong>
+                            <span>Conversions</span>
+                        </div>
+
+                    </div>
+
+                    <form id="converterForm">
+
+                        <div class="converter-controls">
+
+                            <div class="control-group input-group">
+
+                                <label for="temperature">
+                                    Temperature
+                                </label>
+
+                                <div class="input-wrapper">
+                                    <span class="input-symbol">#</span>
+
+                                    <input
+                                        type="number"
+                                        id="temperature"
+                                        placeholder="Enter value"
+                                        step="any"
+                                        autocomplete="off"
+                                        required
+                                    >
+                                </div>
+
+                            </div>
+
+                            <div class="control-group">
+
+                                <label for="fromUnit">
+                                    From
+                                </label>
+
+                                <div class="select-wrapper">
+                                    <select id="fromUnit">
+                                        <option value="C">Celsius °C</option>
+                                        <option value="F">Fahrenheit °F</option>
+                                        <option value="K">Kelvin K</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                    
+                            <button
+                                type="button"
+                                class="swap-button"
+                                id="swapButton"
+                                aria-label="Swap temperature units"
+                                title="Swap units"
+                            >
+                                ⇄
+                            </button>
+
+                
+                            <div class="control-group">
+
+                                <label for="toUnit">
+                                    To
+                                </label>
+
+                                <div class="select-wrapper">
+                                    <select id="toUnit">
+                                        <option value="F">Fahrenheit °F</option>
+                                        <option value="C">Celsius °C</option>
+                                        <option value="K">Kelvin K</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <p
+                            id="errorMessage"
+                            class="error-message"
+                            role="alert"
+                            aria-live="polite"
+                        ></p>
+
+                        <div class="converter-actions">
+
+                            <button
+                                type="submit"
+                                class="convert-button"
+                                id="convertButton"
+                            >
+                                <span>Convert Temperature</span>
+                                <span class="button-arrow">→</span>
+                            </button>
+
+                            <button
+                                type="button"
+                                class="reset-button"
+                                id="resetButton"
+                            >
+                                Reset
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                    <div class="result-card">
+
+                        <div class="result-left">
+
+                            <span class="result-label">
+                                YOUR RESULT
+                            </span>
+
+                            <div
+                                class="result-value"
+                                id="resultValue"
+                                aria-live="polite"
+                            >
+                                —
+                            </div>
+
+                        </div>
+
+                        <div class="result-divider"></div>
+
+                        <div class="result-right">
+
+                            <span class="result-label">
+                                CONVERSION
+                            </span>
+
+                            <p id="resultSummary">
+                                Enter a temperature and select your
+                                units to see the result.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="common-section">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-label">
+                            QUICK REFERENCE
+                        </span>
+
+                        <h2>Common Conversions</h2>
+                    </div>
+
+                    <p>
+                        Useful temperature values you can remember.
+                    </p>
+
+                </div>
+
+
+                <div class="common-grid">
+
+                    <article class="common-card purple-card">
+                        <div class="common-icon">❄</div>
+
+                        <div>
+                            <span>Freezing Point</span>
+                            <strong>0°C = 32°F</strong>
+                        </div>
+                    </article>
+
+
+                    <article class="common-card pink-card">
+                        <div class="common-icon">🌡</div>
+
+                        <div>
+                            <span>Room Temperature</span>
+                            <strong>25°C = 77°F</strong>
+                        </div>
+                    </article>
+
+
+                    <article class="common-card orange-card">
+                        <div class="common-icon">🔥</div>
+
+                        <div>
+                            <span>Boiling Point</span>
+                            <strong>100°C = 212°F</strong>
+                        </div>
+                    </article>
+
+
+                    <article class="common-card cyan-card">
+                        <div class="common-icon">K</div>
+
+                        <div>
+                            <span>Absolute Scale</span>
+                            <strong>0°C = 273.15K</strong>
+                        </div>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="how-section">
+
+            <div class="container">
+
+                <div class="section-heading centered">
+
+                    <span class="section-label">
+                        EASY PROCESS
+                    </span>
+
+                    <h2>How It Works</h2>
+
+                    <p>
+                        Three simple steps to convert any temperature.
+                    </p>
+
+                </div>
+
+
+                <div class="steps-grid">
+
+                    <article class="step-card">
+
+                        <div class="step-number purple">
+                            01
+                        </div>
+
+                        <div class="step-icon">
+                            ⌨
+                        </div>
+
+                        <h3>Enter</h3>
+
+                        <p>
+                            Enter the temperature value you want
+                            to convert.
+                        </p>
+
+                    </article>
+
+
+                    <article class="step-card">
+
+                        <div class="step-number pink">
+                            02
+                        </div>
+
+                        <div class="step-icon">
+                            ⇄
+                        </div>
+
+                        <h3>Select</h3>
+
+                        <p>
+                            Choose the source and target temperature
+                            units.
+                        </p>
+
+                    </article>
+
+
+                    <article class="step-card">
+
+                        <div class="step-number orange">
+                            03
+                        </div>
+
+                        <div class="step-icon">
+                            ✓
+                        </div>
+
+                        <h3>Convert</h3>
+
+                        <p>
+                            Click convert and get an accurate result
+                            instantly.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+            <div class="footer-brand">
+
+                <span class="brand-icon">°</span>
+
+                <div>
+                    <strong>TempConvert</strong>
+                    <span>Built with HTML, CSS & JavaScript</span>
+                </div>
+
+            </div>
+
+            <p>
+                © 2026 Harshad Solanke. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
