@@ -25,7 +25,7 @@ No JavaScript is used in this project.
 
 ## 📁 Project Structure
 
-```text
+
 WebDev-L1-LandingPage/
 │
 ├── index.html
@@ -38,7 +38,7 @@ WebDev-L1-LandingPage/
 │   └── landing-page.png
 │
 └── README.md
-```
+
 
 ---
 
